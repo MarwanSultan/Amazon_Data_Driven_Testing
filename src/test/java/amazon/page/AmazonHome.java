@@ -20,8 +20,8 @@ public class AmazonHome extends BaseTest {
 	@FindBy(id = "twotabsearchtextbox")
 	WebElement searchBox;
 
-	@FindBy(xpath = "//*[@id=\"nav-link-accountList\"]/span[1]")
-	WebElement signInButton;
+	@FindBy(css = "#nav-link-accountList > span.nav-line-1")
+	WebElement signInLink;
 
 	@FindBy(css = "#nav-link-prime")
 	WebElement tryPrimeLink;
@@ -59,7 +59,24 @@ public class AmazonHome extends BaseTest {
 
 	public void clickSignInButton() {
 
-		signInButton.click();
+		signInLink.click();
+
+		/*
+		 * Actions action = new Actions(driver);
+		 * 
+		 * action.moveToElement(signInButton).perform();
+		 * 
+		 * WebElement subElement = driver.findElement(
+		 * By.xpath("//*[@id=\\\"nav-link-accountList\\\"]/span[1]"));
+		 * 
+		 * action.moveToElement(subElement);
+		 * 
+		 * action.click();
+		 * 
+		 * action.perform();
+		 */
+
+		// signInButton.click();
 
 		return;
 
