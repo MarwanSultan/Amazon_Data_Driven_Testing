@@ -1,67 +1,68 @@
 ### 1. **Project Title**
-   - **Amazon Data-Driven Testing**  
+   - **Spring Boot JDBC Demo**
 
 ### 2. **Project Description**
-   - Provide a short introduction to what the project does.  
-   - Example:  
-     *"This project is a data-driven test automation framework for Amazon website functionalities using Selenium WebDriver and TestNG. The framework reads test data from external sources (e.g., Excel, CSV, or databases) to drive automated tests dynamically, ensuring scalability and efficiency."*
+   - This project is a simple Spring Boot application demonstrating how to use JDBC for performing CRUD operations on a relational database. It's designed to be a lightweight, modular, and automation-friendly backend application that can serve as a foundation for integrating automated tests for database-driven applications.
 
 ### 3. **Technologies & Tools Used**
    - **Programming Language**: Java  
-   - **Testing Framework**: TestNG  
-   - **Automation Tool**: Selenium WebDriver  
-   - **Data Handling**: Apache POI (for reading Excel files)  
+   - **Framework**: Spring Boot  
+   - **Database**: H2 (In-Memory Database)  
+   - **Data Access**: Spring JDBC (`JdbcTemplate`)  
    - **Build Tool**: Maven  
    - **Version Control**: Git & GitHub  
-   - **Reporting**: Extent Reports or TestNG Reports  
+   - **Testing Framework (Suggested for Extension)**: JUnit / TestNG (not currently included, but framework ready)
 
 ### 4. **Project Structure**
-   - Explain the folder structure in your repository:
-     ```
-     ├── src
-     │   ├── main
-     │   │   ├── java
-     │   │   │   ├── utilities   # Contains utility classes for data handling
-     │   ├── test
-     │   │   ├── java
-     │   │   │   ├── testCases   # Contains all test scripts
-     │   │   │   ├── base        # Base test setup and teardown
-     ├── testData                 # Contains Excel/CSV test data files
-     ├── pom.xml                  # Maven configuration file
-     ├── README.md                 # Documentation
-     ```
+   ```
+   ├── src
+   │   ├── main
+   │   │   ├── java
+   │   │   │   └── com
+   │   │   │       └── example
+   │   │   │           └── demo
+   │   │   │               ├── controller   # REST controller handling HTTP requests
+   │   │   │               ├── dao          # Data access layer using JdbcTemplate
+   │   │   │               ├── model        # Domain models / DTOs
+   │   │   │               └── service      # Business logic layer
+   │   └── resources
+   │       ├── application.properties       # Configuration file
+   │       └── schema.sql                   # DB schema for initialization
+   ├── pom.xml                              # Maven build configuration
+   ├── README.md                            # Documentation
+   ```
 
 ### 5. **Installation & Setup**
    - **Prerequisites:**
-     - Java 8 or later installed  
+     - Java 11 or later  
      - Maven installed  
-     - Browser drivers (ChromeDriver, GeckoDriver)  
 
    - **Steps to Set Up the Project:**
      1. Clone the repository:
         ```sh
-        git clone https://github.com/MarwanSultan/Amazon_Data_Driven_Testing.git
+        git clone https://github.com/MarwanSultan/springboot_jdbc_demo.git
         ```
      2. Navigate to the project directory:
         ```sh
-        cd Amazon_Data_Driven_Testing
+        cd springboot_jdbc_demo
         ```
      3. Install dependencies:
         ```sh
         mvn clean install
         ```
-     4. Run tests:
+     4. Run the application:
         ```sh
-        mvn test
+        mvn spring-boot:run
         ```
 
 ### 6. **How to Use**
-   - Modify test data in the `testData` folder to add new test cases dynamically.  
-   - Test execution results will be stored in the `test-output` folder.  
-   - Generate reports using:
-     ```sh
-     mvn surefire-report:report
+   - Once the app is running, access the REST endpoints via Postman or a browser.  
+   - The H2 database console can be accessed (if enabled) at:  
      ```
+     http://localhost:8080/h2-console
+     ```  
+   - The `schema.sql` initializes the database tables at runtime.  
+   - You can integrate your test automation suite to verify the database CRUD endpoints or test data integrity.
 
 ### 7. **Contributing**
    - Fork the repository  
@@ -70,13 +71,13 @@
    - Create a Pull Request  
 
 ### 8. **License**
-   - Specify if the project is under **MIT, Apache, or another license**  
+   - This project is licensed under the **MIT License**
 
 ### 9. **Author**
    - **Marwan Sultan**  
-   - LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/marwansultan/)  
+   - LinkedIn: [linkedin.com/in/marwansultan](https://www.linkedin.com/in/marwansultan/)  
    - Email: marwan.sultan@gmail.com  
 
 ---
 
-Would you like a fully formatted README file? I can generate it for you! 🚀
+Let me know if you'd like this turned into a polished `README.md` file—I can generate it for you in one click!
